@@ -33,7 +33,9 @@ public class PlayerController : MonoBehaviour
         //점프 더블 점프
         if (Input.GetKeyDown(KeyCode.W) && jumpCnt < 2)
         {
+            //점프 높이 균등화를 위한 벨로시티 초기화
             rb.velocity = Vector3.zero;
+            //실질적 점프 메커니즘
             rb.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);
             jumpCnt++;
         }
