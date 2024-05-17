@@ -27,3 +27,11 @@
 
 ### 폴더 + 파일 + 함수 명 사전
 #### 필수로 추가할것것
+
+BC.cs = BaseController.cs
+PICS.cs = PlayerInputControllerSingle.cs
+PMS.cs = PlayerMovementSingle.cs
+GMS.cs = GameManagerSingle.cs
+M.cs = Meteor.cs
+    rFE = rendererFallingEffect
+a
