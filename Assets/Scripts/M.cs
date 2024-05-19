@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class M : MonoBehaviour
 {
-    [SerializeField] private GameObject rFE;
     [SerializeField] private GameObject player;
     private Rigidbody2D rb2d;
     [SerializeField] private int opt;
@@ -35,7 +34,6 @@ public class M : MonoBehaviour
         {
             if (opt == 1) // In case of meteor(opt = 1), the meteor will be destroyed
                 Destroy(gameObject);
-            rFE.SetActive(false);
         }
         else if (coll.gameObject.CompareTag("Player"))
         {
