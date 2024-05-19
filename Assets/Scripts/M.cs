@@ -6,6 +6,7 @@ public class M : MonoBehaviour
 {
     [SerializeField] private GameObject rFE;
     [SerializeField] private GameObject player;
+    private Rigidbody2D rb2d;
     [SerializeField] private int opt;
 
     int count = 0;
@@ -14,6 +15,7 @@ public class M : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        rb2d = GetComponent<Rigidbody2D>();
         float x = player.transform.position.x;
         float y = 4f;
         x += Random.Range(-2f, 2f);
@@ -21,29 +23,22 @@ public class M : MonoBehaviour
         
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnCollisionExit2D(Collision2D coll)
     {
+        //rb2d.mass = 1000;
+        rb2d.velocity = Vector2.zero;
     }
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if((coll.gameObject.CompareTag("Ground") || 
-            coll.gameObject.CompareTag("Rock")) &&
-            !gameObject.CompareTag("Rock"))
+            coll.gameObject.CompareTag("Rock")))
         {
-            if (opt == 1) // In case of meteor, the meteor will be destroyed
+            if (opt == 1) // In case of meteor(opt = 1), the meteor will be destroyed
                 Destroy(gameObject);
             rFE.SetActive(false);
         }
         else if (coll.gameObject.CompareTag("Player"))
         {
-            // coll.contacts.Length = 2
-            // [ContactPoint2D] coll.contact[idx] 
-            // [Vector2], normal vector, coll.contact[idx].normal
-            // (-1,0), (1,0), (
-            foreach(var i in coll.contacts)
-            {
-                Debug.Log(i.normal);
-            }
             if(coll.contacts[0].normal.y == -1) // 플레이어가 밟았을때
             {
                 count++; // 멀쩡한 바위 -> 금간 바위
@@ -53,8 +48,14 @@ public class M : MonoBehaviour
             else if (coll.contacts[0].normal.y == 1) // 플레이어 머리위로 떨어졌을때
             { 
                 // 플레이어 체력감소 || 게임 오버
-                GameManager.instance.GameOver();
+                GMS.instance.GameOver();
             }
+        }
+        //else if (!coll.gameObject.CompareTag("Player"))
+        else if(coll.gameObject.CompareTag("Rock"))
+        {
+            rb2d.freezeRotation = false;
+            rb2d.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
     }
 }

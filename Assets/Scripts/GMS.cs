@@ -2,20 +2,22 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class GameManager:MonoBehaviour
+public class GMS:MonoBehaviour
 {
     [SerializeField] private GameObject meteor;
     [SerializeField] private GameObject rock;
     [SerializeField] private TMP_Text scoreTxt;
-    public static GameManager instance;
+    public static GMS instance;
 
     private string pName = "Test";
     private float time;
 
     private int count = 0;
-    private int mCount = 2;
+    private int mCount = 1;
     public void Start()
     {
+        if (instance == null)
+            instance = this;
         InvokeRepeating("GenerateMeteor", 0f, 1f);
         InitalizeTime();
     }
