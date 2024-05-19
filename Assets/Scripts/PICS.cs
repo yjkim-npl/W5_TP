@@ -10,4 +10,8 @@ public class PICS : BC
     {
         CallMoveEvent(val.Get<Vector2>().normalized);
     }
+    public void OnFire(InputValue value)
+    {
+        Debug.Log("OnFire" + value.ToString());
+    }
 }

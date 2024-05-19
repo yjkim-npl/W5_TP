@@ -34,4 +34,5 @@ PMS.cs = PlayerMovementSingle.cs
 GMS.cs = GameManagerSingle.cs
 M.cs = Meteor.cs
     rFE = rendererFallingEffect
-a
+SSUI.cs = SelectSceneUI.cs
+SSG.cs = SelectSceneGameManager.cs
