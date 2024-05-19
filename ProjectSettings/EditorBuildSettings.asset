@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/dev_YJKim.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/TitleScene.unity
+    guid: 40a39f4195fd3aa49b62d61d68c97e34
+  - enabled: 1
+    path: Assets/Scenes/SelectScene.unity
+    guid: bd4e30199622edc468ec40ce322ecb32
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: c5ffc757475465443b4c1fefbf994360
   m_configObjects: {}
