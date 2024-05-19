@@ -10,9 +10,4 @@ public class TotalController : MonoBehaviour
     {
         OnMoveEvent?.Invoke(direction);
     }
-
-    public void CallLookEvent(Vector2 direction)
-    {
-        OnLookEvent?.Invoke(direction);
-    }
 }
