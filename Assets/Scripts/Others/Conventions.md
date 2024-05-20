@@ -36,3 +36,5 @@ M.cs = Meteor.cs
     rFE = rendererFallingEffect
 SSUI.cs = SelectSceneUI.cs
 SSG.cs = SelectSceneGameManager.cs
+DM.cs = DataManager.cs
+SSAC.cs = SelectSceneAnimationController.cs

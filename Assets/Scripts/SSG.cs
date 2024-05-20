@@ -36,6 +36,8 @@ public class SSG : MonoBehaviour
     void Start()
     {
         SSUI.SetActive(true);
+        // child: 0=Lvl, 1=Mode, 2=Chara, 3=Name
+//        SSUI.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     // Update is called once per frame
