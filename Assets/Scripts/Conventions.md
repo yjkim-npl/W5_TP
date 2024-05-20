@@ -39,3 +39,4 @@ SSG.cs = SelectSceneGameManager.cs
 GS.cs = GameStart.cs
 GE.cs = GameExit.cs
 PB.cs = PauseBtn.cs
+AM.cs = AudioManager.cs
