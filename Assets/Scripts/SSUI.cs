@@ -12,16 +12,19 @@ public class SSUI : MonoBehaviour
     [SerializeField] private GameObject p2NameField;
 
     public void SelectLvl(int lvl) { SSG.instance.SetLvl(lvl); }
+
     public void SelectMode(int mode) {  SSG.instance.SetMode(mode);}
     
-
     public void SelectP1Chara(int chara) { p1chara = chara; }
+
     public void SelectP2Chara(int chara) { if(SSG.instance.GetMode() == 2) p2chara = chara; }
+
     public void ResetBtn()
     {
         SSG.instance.SetP1Chara(0);
         SSG.instance.SetP2Chara(0);
     }
+
     public void ConfirmChara() 
     {
         SSG.instance.SetP1Chara(p1chara); 
@@ -36,6 +39,7 @@ public class SSUI : MonoBehaviour
             p2NameField.GetComponent<RectTransform>().localPosition = new Vector3(-100, -120, 0);
         }
     }
+
     public void ConfirmName()
     {
         SSG.instance.SetP1Name(p1Name);

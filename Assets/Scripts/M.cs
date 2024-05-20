@@ -10,7 +10,6 @@ public class M : MonoBehaviour
 
     int count = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -27,6 +26,7 @@ public class M : MonoBehaviour
         //rb2d.mass = 1000;
         rb2d.velocity = Vector2.zero;
     }
+
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if((coll.gameObject.CompareTag("Ground") || 

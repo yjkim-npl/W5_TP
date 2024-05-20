@@ -27,20 +27,15 @@ public class SSG : MonoBehaviour
     public void SetP1Name(string name) { p1Name = name;}
     public void SetP2Name(string name) { p2Name = name;}
     #endregion
+
     private void Awake()
     {
         if (instance == null)
             instance = this;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         SSUI.SetActive(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

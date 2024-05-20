@@ -14,6 +14,7 @@ public class GMS:MonoBehaviour
 
     private int count = 0;
     private int mCount = 1;
+
     public void Start()
     {
         if (instance == null)
@@ -22,12 +23,12 @@ public class GMS:MonoBehaviour
         InitalizeTime();
     }
 
-
     public void Update()
     {
         time += Time.deltaTime;
         SetTimeTxt();
     }
+
     public void GenerateMeteor()
     {
         if(count <mCount)
@@ -46,12 +47,14 @@ public class GMS:MonoBehaviour
     {
         time = 0f;
     }
+
     private void SetTimeTxt()
     {
         scoreTxt.text = pName + "\n" + time.ToString("N2");
     }
 
     public void SetName(string name) { pName = name; }
+
     public string GetName() { return  pName; }
 
     public void GameOver()
