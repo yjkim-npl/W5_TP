@@ -140,7 +140,6 @@ GameObject:
   - component: {fileID: 126187652}
   - component: {fileID: 126187651}
   - component: {fileID: 126187650}
-  - component: {fileID: 126187654}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -261,7 +260,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1703873719, guid: a35f7578992b93d47956d6f99be09ec4, type: 3}
+  m_Sprite: {fileID: 254171357, guid: ad2451bdf0f9dbe4e886d7bed73c34df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -282,7 +281,7 @@ Animator:
   m_GameObject: {fileID: 126187643}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5e9e708f679e7144a3d175a2969a885, type: 2}
+  m_Controller: {fileID: 9100000, guid: 420d3cfc11677274f93a6aeb814f378d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -383,18 +382,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &126187654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126187643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b267d14775fd6d4eb73da3528abe2d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &172921351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,7 +2353,6 @@ GameObject:
   - component: {fileID: 743259421}
   - component: {fileID: 743259420}
   - component: {fileID: 743259419}
-  - component: {fileID: 743259428}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -2609,18 +2595,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &743259428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743259418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b267d14775fd6d4eb73da3528abe2d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &747679491
 GameObject:
   m_ObjectHideFlags: 0
