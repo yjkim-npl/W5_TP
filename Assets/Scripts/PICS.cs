@@ -13,11 +13,11 @@ public class PICS : BC
 
     public void OnJump(InputValue val)
     {
-        CallJumpEvent(val.Get<Vector2>().normalized);
+        CallJumpEvent();
     }
 
-    public void OnFire(InputValue value)
+    public void OnFire(InputValue val)
     {
-        Debug.Log("OnFire" + value.ToString());
+        Debug.Log("OnFire" + val.ToString());
     }
 }

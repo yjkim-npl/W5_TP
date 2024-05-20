@@ -20,12 +20,11 @@ public class CAC : AC
     protected override void Start()
     {
         controller.OnMoveEvent += Move;
-        controller.OnJumpEvent += Jump;
     }
 
-    private void Jump(Vector2 obj)
+    public void Jump(bool jump)
     {
-        animator.SetBool(isJump, obj.magnitude > magnituteThreshold);
+        animator.SetBool(isJump, jump);
     }
 
     private void Move(Vector2 obj)
