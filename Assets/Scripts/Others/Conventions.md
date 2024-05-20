@@ -39,3 +39,5 @@ SSG.cs = SelectSceneGameManager.cs
 GS.cs = GameStart.cs
 GE.cs = GameExit.cs
 PB.cs = PauseBtn.cs
+DM.cs = DataManager.cs
+SSAC.cs = SelectSceneAnimationController.cs
