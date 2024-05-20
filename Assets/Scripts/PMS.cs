@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PMS : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
     private CAC cAC;
     private PICS ctrl;
     private Rigidbody2D rb2d;
@@ -15,6 +16,7 @@ public class PMS : MonoBehaviour
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         cAC = GetComponent<CAC>();
         ctrl = GetComponent<PICS>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -40,6 +42,10 @@ public class PMS : MonoBehaviour
 
     private void ApplyMovement(Vector2 v2)
     {
+        if (v2.x > 0)
+            spriteRenderer.flipX = false;
+        else if (v2.x < 0)
+            spriteRenderer.flipX = true;
         v2 = speed * v2;
         //transform.position += new Vector3(v2.x, v2.y);
         rb2d.velocity = new Vector2(v2.x, rb2d.velocity.y);
