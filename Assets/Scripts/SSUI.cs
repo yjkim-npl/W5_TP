@@ -14,18 +14,9 @@ public class SSUI : MonoBehaviour
     [SerializeField] private GameObject p1NameField;
     [SerializeField] private GameObject p2NameField;
 
-    public void SelectLvl(int lvl) { SSG.instance.SetLvl(lvl); }
-
-    public void SelectMode(int mode) {  SSG.instance.SetMode(mode);}
-    
-    public void SelectP1Chara(int chara) { p1chara = chara; }
-
-    public void SelectP2Chara(int chara) { if(SSG.instance.GetMode() == 2) p2chara = chara; }
-
     public void SelectLvl(int lvl) { DM.instance.SetLvl(lvl); }
     public void SelectMode(int mode) {  DM.instance.SetMode(mode);}
     
-
     public void SelectP1Chara(int chara) 
     {
         if (DM.instance.GetP1Chara() != 0)
