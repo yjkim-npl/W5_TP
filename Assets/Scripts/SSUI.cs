@@ -131,7 +131,7 @@ public class SSUI : MonoBehaviour
         p2Name = IFp2.text;
         DM.instance.SetP1Name(p1Name);
         DM.instance.SetP2Name(p2Name);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainScene_SWK");
     }
 
     public void GoToTitle()

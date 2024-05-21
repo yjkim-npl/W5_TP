@@ -24,7 +24,7 @@ public class GS : MonoBehaviour
     IEnumerator loadMainScene()
     {
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainScene_SWK");
         StopCoroutine(loadMainScene());
     }
 }
