@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1519442378009331777}
   m_Layer: 5
   m_Name: WBG
-  m_TagString: Untagged
+  m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 8479143992762585177}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 9009368595718026672}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,7 +404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d06e6a1c65c90642b27ab1852985f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rFE: {fileID: 0}
   player: {fileID: 0}
   opt: 1
 --- !u!50 &2176683905680614276
