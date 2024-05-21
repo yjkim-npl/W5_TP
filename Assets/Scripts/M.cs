@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class M : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private TMP_Text text;
+    [SerializeField] private GameObject BG;
+    private BoxCollider2D coll2d;
     private Rigidbody2D rb2d;
     [SerializeField] private int opt;
 
@@ -12,8 +16,32 @@ public class M : MonoBehaviour
 
     void Start()
     {
+        coll2d = GetComponentInChildren<BoxCollider2D>();
         player = GameObject.FindWithTag("Player");
         //player = GameObject.FindWithTag("Player");
+
+        int rnd = Random.Range(0, 9);
+        if (gameObject.CompareTag("Meteor"))
+        {
+            switch (DM.instance.GetLvl())
+            {
+                case 1:
+                    text.text = DM.instance.wordsE[rnd];
+                    BG.GetComponent<RectTransform>().sizeDelta = new Vector2(1,1);
+                    coll2d.size = new Vector2(1, 1);
+                    break;
+                case 2:
+                    text.text = DM.instance.wordsN[rnd];
+                    BG.GetComponent<RectTransform>().sizeDelta = new Vector2(2,1);
+                    coll2d.size = new Vector2(2, 1);
+                    break;
+                case 3:
+                    text.text = DM.instance.wordsH[rnd];
+                    BG.GetComponent<RectTransform>().sizeDelta = new Vector2(3,1);
+                    coll2d.size = new Vector2(3, 1);
+                    break;
+            }
+        }
         rb2d = GetComponent<Rigidbody2D>();
         float x = player.transform.position.x;
         float y = 4f;

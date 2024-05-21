@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SSG : MonoBehaviour
@@ -32,6 +33,8 @@ public class SSG : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+        if(DM.instance != null)
+            DM.instance.Init();
     }
 
     void Start()

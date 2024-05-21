@@ -404,8 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d06e6a1c65c90642b27ab1852985f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rFE: {fileID: 0}
   player: {fileID: 0}
+  text: {fileID: 9009368595718026672}
+  BG: {fileID: 510600610855866018}
   opt: 1
 --- !u!50 &2176683905680614276
 Rigidbody2D:

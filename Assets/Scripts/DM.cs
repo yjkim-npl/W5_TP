@@ -1,4 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DM:MonoBehaviour
@@ -12,6 +16,9 @@ public class DM:MonoBehaviour
     private string p1Name;
     private string p2Name;
 
+    public List<string> wordsE;
+    public List<string> wordsN;
+    public List<string> wordsH;
     #region Get, Set field value
     public int GetLvl() { return Lvl; }
     public int GetMode() { return Mode;}
@@ -32,12 +39,41 @@ public class DM:MonoBehaviour
         {
             instance = this;
             LoadWords();
+            DontDestroyOnLoad(this);
         }
-        DontDestroyOnLoad(this);
+        else
+        {
+            Init();
+        }
+    }
+
+    public void Init()
+    {
+       Lvl = 0;
+       Mode = 0;
+       p1chara = 0;
+       p2chara = 0;
+       p1Name = "";
+       p2Name = "";
     }
 
     private void LoadWords()
     {
-
+        wordsE = new List<String>();
+        wordsN = new List<String>();
+        wordsH = new List<String>();
+        StreamReader sr = new StreamReader("./Assets/Scripts/words.txt");
+        string line = sr.ReadLine(); // Initialize & remove dummy row
+        while(line != null)
+        {
+            line = sr.ReadLine();
+            if (line == null)
+                continue;
+            List<string> ele = line.Split(' ').ToList();
+            wordsE.Add(ele[0]); // easy
+            wordsN.Add(ele[1]); // normal
+            wordsH.Add(ele[2]); // hard
+        }
+        sr.Close();
     }
 }
