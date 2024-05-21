@@ -21,6 +21,17 @@ public class GMS : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+        Player1.gameObject.SetActive(false);
+        Player2.gameObject.SetActive(false);
+        if(DM.instance.GetMode() == 1)
+        {
+            Player1.gameObject.SetActive(true);
+        }
+        if(DM.instance.GetMode() == 2)
+        {
+            Player1.gameObject.SetActive(true);
+            Player2.gameObject.SetActive(true);
+        }
         InvokeRepeating("GenerateMeteor", 0f, 1f);
         InitalizeTime();
 

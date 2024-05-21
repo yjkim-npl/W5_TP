@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DM:MonoBehaviour
@@ -28,7 +29,15 @@ public class DM:MonoBehaviour
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            LoadWords();
+        }
         DontDestroyOnLoad(this);
+    }
+
+    private void LoadWords()
+    {
+
     }
 }

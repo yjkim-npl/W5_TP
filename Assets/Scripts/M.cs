@@ -13,10 +13,11 @@ public class M : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        //player = GameObject.FindWithTag("Player");
         rb2d = GetComponent<Rigidbody2D>();
         float x = player.transform.position.x;
         float y = 4f;
-        x += Random.Range(-2f, 2f);
+        x = Random.Range(-7f, 7f);
         transform.position = new Vector3(x, y, 0);
         
     }
