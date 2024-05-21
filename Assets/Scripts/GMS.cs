@@ -1,15 +1,17 @@
 using System;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class GMS:MonoBehaviour
+public class GMS : MonoBehaviour
 {
     [SerializeField] private GameObject meteor;
     [SerializeField] private GameObject rock;
     [SerializeField] private TMP_Text scoreTxt;
+    [SerializeField] private GameObject Player1;
+    [SerializeField] private GameObject Player2;
     public static GMS instance;
 
-    private string pName = "Test";
     private float time;
 
     private int count = 0;
@@ -21,6 +23,18 @@ public class GMS:MonoBehaviour
             instance = this;
         InvokeRepeating("GenerateMeteor", 0f, 1f);
         InitalizeTime();
+
+        switch (DM.instance.GetMode())
+        {
+            case 1:
+                Player1.transform.position = new Vector3(0, 0);
+                break;
+            case 2:
+                Player2.SetActive(true);
+                Player1.transform.position = new Vector3(-8, 0);
+                Player2.transform.position = new Vector3(8, 0);
+                break;
+        }
     }
 
     public void Update()
@@ -31,7 +45,7 @@ public class GMS:MonoBehaviour
 
     public void GenerateMeteor()
     {
-        if(count <mCount)
+        if (count < mCount)
         {
             Instantiate(meteor);
             count++;
@@ -50,12 +64,8 @@ public class GMS:MonoBehaviour
 
     private void SetTimeTxt()
     {
-        scoreTxt.text = pName + "\n" + time.ToString("N2");
+        scoreTxt.text = "진행 시간" + "\n" + time.ToString("N2");
     }
-
-    public void SetName(string name) { pName = name; }
-
-    public string GetName() { return  pName; }
 
     public void GameOver()
     {

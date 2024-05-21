@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PMS : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    private CAC cAC;
+    public SpriteRenderer spriteRenderer;
+    public CAC cAC;
     private PICS ctrl;
     private Rigidbody2D rb2d;
     private Vector2 mDir = Vector2.zero;
@@ -13,16 +13,35 @@ public class PMS : MonoBehaviour
 
     [SerializeField] private float jumpPower;
     [SerializeField] private float speed = 0.1f;
+    [SerializeField] private GameObject[] characters;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         cAC = GetComponent<CAC>();
         ctrl = GetComponent<PICS>();
         rb2d = GetComponent<Rigidbody2D>();
         ctrl.OnMoveEvent += Move;
         ctrl.OnJumpEvent += ApplyJumpment;
+    }
 
+    private void Start()
+    {
+        if(DM.instance.GetMode() == 1)
+        characters[DM.instance.GetP1Chara()-1].SetActive(true);
+
+        else if(DM.instance.GetMode() == 2)
+        {
+            switch (gameObject.name)
+            {
+                case "P1":
+                    characters[DM.instance.GetP1Chara()-1].SetActive(true);
+                    break;
+                case "P2":
+                    characters[DM.instance.GetP2Chara()-1].SetActive(true);
+                    break;
+
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -47,7 +66,6 @@ public class PMS : MonoBehaviour
         else if (v2.x < 0)
             spriteRenderer.flipX = true;
         v2 = speed * v2;
-        //transform.position += new Vector3(v2.x, v2.y);
         rb2d.velocity = new Vector2(v2.x, rb2d.velocity.y);
     }
 
@@ -63,7 +81,7 @@ public class PMS : MonoBehaviour
                 cAC.Jump(true);
                 rb2d.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);
                 isJumping = true;
-                Invoke("JumpTime", 0.2f);
+                Invoke("JumpTime", 0.1f);
                 jumpCnt++;
             }
         }
