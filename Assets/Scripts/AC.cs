@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AC : MonoBehaviour
 {
-    protected Animator animator;
+    public Animator animator;
     protected BC controller;
 
     protected virtual void Awake()

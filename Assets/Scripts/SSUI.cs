@@ -4,6 +4,7 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SSUI : MonoBehaviour
 {

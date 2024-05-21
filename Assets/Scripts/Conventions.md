@@ -1,42 +1,51 @@
 ### General
-- ±æ¾îÁø Æú´õ/ÆÄÀÏ¸íÀº .md ÆÄÀÏ¿¡ ¾àÀÚ·Î Ç¥±âÇØµÎ±â
-    - ¿¹½Ã: Controller/PlayerAnimationController.cs -> Controller/PAC.cs
-- ±ê Ä¿¹ÔÀº ÇÑ±Û·Î ¾Ë¾Æº¸±â ½±°Ô
-- ±æ¾îÁø ÇÔ¼ö¸íÀº .md ÆÄÀÏ¿¡ ¾àÀÚ·Î Ç¥±âÇØµÎ±â
+- ê¸¸ì–´ì§„ í´ë”/íŒŒì¼ëª…ì€ .md íŒŒì¼ì— ì•½ìë¡œ í‘œê¸°í•´ë‘ê¸°
+    - ì˜ˆì‹œ: Controller/PlayerAnimationController.cs -> Controller/PAC.cs
+- ê¹ƒ ì»¤ë°‹ì€ í•œê¸€ë¡œ ì•Œì•„ë³´ê¸° ì‰½ê²Œ
+- ê¸¸ì–´ì§„ í•¨ìˆ˜ëª…ì€ .md íŒŒì¼ì— ì•½ìë¡œ í‘œê¸°í•´ë‘ê¸°
 
-### ±ê ÄÁº¥¼Ç!
-- »ç¿ë¹ı
-    - ¿¹½Ã: "Á¡ÇÁ ÆÄÀÏ »ı¼º"
-- Ä¿¹Ô ±ÔÄ¢!
-    - »ı¼º: °ÔÀÓ¸Å´ÏÀú ½ºÅ©¸³Æ® »ı¼º
-    - »èÁ¦: ÇÃ·¹ÀÌ¾î ÇÁ¸®ÆÕ »èÁ¦
-    - ±â´ÉÃß°¡: ÀÎÇ²½Ã½ºÅÛ Ãß°¡
-    - ±â´ÉÁ¦°Å: Ä«¸Ş¶ó¿¡ ºÙÀº ÄÄÆ÷³ÍÆ® Á¦°Å
-    - ÀÌ¹ÌÁö¼öÁ¤: Å¸ÀÏ ¸Ê Ãß°¡
+### ê¹ƒ ì»¨ë²¤ì…˜!
+- ì‚¬ìš©ë²•
+    - ì˜ˆì‹œ: "ì í”„ íŒŒì¼ ìƒì„±"
+- ì»¤ë°‹ ê·œì¹™!
+    - ìƒì„±: ê²Œì„ë§¤ë‹ˆì € ìŠ¤í¬ë¦½íŠ¸ ìƒì„±
+    - ì‚­ì œ: í”Œë ˆì´ì–´ í”„ë¦¬íŒ¹ ì‚­ì œ
+    - ê¸°ëŠ¥ì¶”ê°€: ì¸í’‹ì‹œìŠ¤í…œ ì¶”ê°€
+    - ê¸°ëŠ¥ì œê±°: ì¹´ë©”ë¼ì— ë¶™ì€ ì»´í¬ë„ŒíŠ¸ ì œê±°
+    - ì´ë¯¸ì§€ìˆ˜ì •: íƒ€ì¼ ë§µ ì¶”ê°€
 
-### ÄÚµå ÄÁº¥¼Ç!
-1. º¯¼ö camelCase ('_' )
+### ì½”ë“œ ì»¨ë²¤ì…˜!
+1. ë³€ìˆ˜ camelCase ('_' )
     - (o) int playerNum = 0;
     - (x) int player_num = 0;
     - (o) string playerName = "asdf";
-2. ÇÔ¼ö, Å¬·¡½º µî ³ª¸ÓÁö´Â Pascal
+2. í•¨ìˆ˜, í´ë˜ìŠ¤ ë“± ë‚˜ë¨¸ì§€ëŠ” Pascal
     - (o) class MyClass
     - (x) class kebab-case
-3. ÀÛ¾÷Àº ¾ÀÀ» ºĞÇÒÇÏ¿© ÀÛ¾÷ ÈÄ ¸¶¹«¸®ÇÒ ¶§ ´Ù°°ÀÌ È­¸é °øÀ¯ÇÏ°í ÇÕÄ¡±â
-    - ±è¿ëÁØ ÀÛ¾÷ -> ¿ÀÁ÷ dev_YJKIM ¾À¿¡¼­¸¸ (³íÀÇ ¾øÀ»½Ã)
+3. ì‘ì—…ì€ ì”¬ì„ ë¶„í• í•˜ì—¬ ì‘ì—… í›„ ë§ˆë¬´ë¦¬í•  ë•Œ ë‹¤ê°™ì´ í™”ë©´ ê³µìœ í•˜ê³  í•©ì¹˜ê¸°
+    - ê¹€ìš©ì¤€ ì‘ì—… -> ì˜¤ì§ dev_YJKIM ì”¬ì—ì„œë§Œ (ë…¼ì˜ ì—†ì„ì‹œ)
 
-### Æú´õ + ÆÄÀÏ + ÇÔ¼ö ¸í »çÀü
-#### ÇÊ¼ö·Î Ãß°¡ÇÒ°Í°Í
+### í´ë” + íŒŒì¼ + í•¨ìˆ˜ ëª… ì‚¬ì „
+#### í•„ìˆ˜ë¡œ ì¶”ê°€í•  ê²ƒ
 
+AC.cs = AnimationController.cs
 BC.cs = BaseController.cs
+CAC.cs = CharacterAnimationController.cs
+CI.cs = CharacterInform.cs
+DM.cs = DataManager.cs
+GE.cs = GameExit.cs
+GMS.cs = GameManagerSingle.cs
+GS.cs = GameStart.cs
+GSS.cs = GameStartSetting.cs
+M.cs = Meteor.cs
+PB.cs = PauseBtn.cs
 PICS.cs = PlayerInputControllerSingle.cs
 PMS.cs = PlayerMovementSingle.cs
-GMS.cs = GameManagerSingle.cs
-M.cs = Meteor.cs
-    rFE = rendererFallingEffect
-SSUI.cs = SelectSceneUI.cs
+SSAC.cs = SelectSceneAnimationController.cs
 SSG.cs = SelectSceneGameManager.cs
 GS.cs = GameStart.cs
 GE.cs = GameExit.cs
 PB.cs = PauseBtn.cs
 AM.cs = AudioManager.cs
+SSUI.cs = SelectSceneUI.cs
+rFE = rendererFallingEffect
