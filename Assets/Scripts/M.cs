@@ -66,16 +66,16 @@ public class M : MonoBehaviour
         }
         else if (coll.gameObject.CompareTag("Player"))
         {
-            if(coll.contacts[0].normal.y == -1) // 플레이어가 밟았을때
+            if (coll.contacts[0].normal.y < 0) // 플레이어가 밟았을때
             {
                 count++; // 멀쩡한 바위 -> 금간 바위
                 if(count == 1) // 금간 바위 -> 터짐
                     Destroy(gameObject);
             }
-            else if (coll.contacts[0].normal.y == 1) // 플레이어 머리위로 떨어졌을때
-            { 
+            else if (coll.contacts[0].normal.y > 0) // 플레이어 머리위로 떨어졌을때
+            {
                 // 플레이어 체력감소 || 게임 오버
-                GMS.instance.GameOver();
+                GMS.instance.GameOver(coll.gameObject);
             }
         }
         //else if (!coll.gameObject.CompareTag("Player"))
