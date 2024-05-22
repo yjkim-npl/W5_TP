@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -137,7 +138,12 @@ public class SSUI : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScene");
     }
-        // child: 0=Lvl, 1=Mode, 2=Chara, 3=Name
+    public void RealGoToTitle()
+    {
+        Invoke("GoToTitle", 1f);
+    }
+
+    // child: 0=Lvl, 1=Mode, 2=Chara, 3=Name
     public void GoToPrevSel(int curSel)
     {
         transform.GetChild(curSel).gameObject.SetActive(false);
