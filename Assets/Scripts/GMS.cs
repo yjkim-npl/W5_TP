@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
@@ -10,7 +11,7 @@ public class GMS : MonoBehaviour
     [SerializeField] private TMP_Text scoreTxt;
     [SerializeField] private GameObject Player1;
     [SerializeField] private GameObject Player2;
-    [SerializeField] private GameObject endPannel;
+    [SerializeField] private GameObject singleEndPannel;
     [SerializeField] private GameObject multiEndPannel;
     [SerializeField] private TMP_Text winnerPannel;
     [SerializeField] private TMP_Text loserPannel;
@@ -87,10 +88,23 @@ public class GMS : MonoBehaviour
         Time.timeScale = 0f;
         if (DM.instance.GetMode() == 1)
         {
-            endPannel.gameObject.SetActive(true);
+            // ranking pannel
+            singleEndPannel.gameObject.SetActive(true);
+            List<(string, float)> rank = DM.instance.GetRankUpto3rd();
+            string rnks = string.Format("1위 {0} {1}\n2위 {2} {3}\n3위 {4} {5}",
+                rank[0].Item1, rank[0].Item2,
+                rank[1].Item1, rank[1].Item2,
+                rank[2].Item1, rank[2].Item2);
+            singleEndPannel.transform.GetChild(2).GetComponent<TMP_Text>().text = rnks;
+
+            // players score
+            string name = DM.instance.GetP1Name();
+            string score = time.ToString("N1");
+            singleEndPannel.transform.GetChild(3).GetComponent<TMP_Text>().text = string.Format("놀이결과: {0} {1}", name, score);
+            DM.instance.WriteRankToFile(name, time);
 
         }
-        if (DM.instance.GetMode() == 2)
+        else if (DM.instance.GetMode() == 2)
         {
             multiEndPannel.gameObject.SetActive(true);
             //이름 받아오기

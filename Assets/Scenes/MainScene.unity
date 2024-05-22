@@ -7078,7 +7078,7 @@ MonoBehaviour:
   scoreTxt: {fileID: 1636686920}
   Player1: {fileID: 891857161}
   Player2: {fileID: 552832096}
-  endPannel: {fileID: 1247151092}
+  singleEndPannel: {fileID: 1247151092}
   multiEndPannel: {fileID: 940653954}
   winnerPannel: {fileID: 1510735311}
   loserPannel: {fileID: 1678433739}
