@@ -116,14 +116,28 @@ public class DM:MonoBehaviour
         while(line != null)
         {
             line = sr.ReadLine();
+            if (line == null) continue;
             prevRnks.Add(line);
         }
         sr.Close();
+
         StreamWriter sw = new StreamWriter("./Assets/Scripts/rank.txt");
+        bool isExist = false;
         foreach(var i in  prevRnks)
+        {
+            string[] comp = i.Split(' ');
+            if (comp[0] == name)
+            {
+                isExist = true;
+                if (float.Parse(comp[1]) < score)
+                    sw.WriteLine("{0} {1}", name, score.ToString("N2"));
+                continue;
+            }
             sw.WriteLine(i);
-        line = String.Format("{0} {1}",name,score);
-        sw.WriteLine(line);
+        }
+        if(!isExist)
+            sw.WriteLine("{0} {1}", name, score.ToString("N2"));
+
         sw.Close();
     }
 }
