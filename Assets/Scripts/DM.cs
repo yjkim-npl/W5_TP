@@ -80,7 +80,8 @@ public class DM:MonoBehaviour
     internal List<(string, float)> GetRankUpto3rd()
     {
         List<(string,float)> lisRank = new List<(string,float)>();
-        List<(string,float)> lisTemp = new List<(string,float)>();
+        Dictionary<string,float> dicTemp = new Dictionary<string,float>();
+
         StreamReader sr = new StreamReader("./Assets/Scripts/rank.txt");
         string line = sr.ReadLine(); // Initialzie & remove dummy line
         while(line != null)
@@ -89,37 +90,21 @@ public class DM:MonoBehaviour
             if (line == null)
                 continue;
             string[] ele = line.Split(" ");
-            lisTemp.Add((ele[0], float.Parse(ele[1])));
+            if (ele.Length < 2)
+                continue;
+            dicTemp.Add(ele[0], float.Parse(ele[1]));
         }
         sr.Close();
+
+        var queryAsc = dicTemp.OrderByDescending(x => x.Value);
+
 
         // Judge the minimum time on the lists
         string[] player = new string[3] {"None","None","None"};
         float[] min = new float[3] { 0f,0f,0f};
-        foreach(var i in lisTemp)
-        {
-            (string, float) rank;
-            int idx = -1;
-            if (i.Item2 > min[2])
-            {
-                idx = 2;
-                min[2] = i.Item2;
-                player[2] = i.Item1;
-            }
-            else if (i.Item2 > min[1])
-            {
-                idx = 1;
-                min[1] = i.Item2;
-                player[1] = i.Item1;
-            }
-            else if (i.Item2 > min[0])
-            {
-                idx = 0;
-                min[0] = i.Item2;
-                player[0] = i.Item1;
-            }
-        }
-        for(int a=0; a<3; a++)
+        foreach (var i in queryAsc)
+            lisRank.Add((i.Key, i.Value));
+        for(int a=lisRank.Count; a<3; a++)
             lisRank.Add((player[a], min[a]));
         return lisRank;
     }
