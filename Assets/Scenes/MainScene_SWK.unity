@@ -2279,12 +2279,12 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1395805757}
-  m_HandleRect: {fileID: 0}
+  m_HandleRect: {fileID: 1699924054}
   m_Direction: 0
   m_MinValue: 0.001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.001
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6018,7 +6018,7 @@ MonoBehaviour:
   m_MinValue: 0.001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.001
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -6634,6 +6634,10 @@ MonoBehaviour:
   scoreTxt: {fileID: 239553892}
   Player1: {fileID: 891857161}
   Player2: {fileID: 552832096}
+  endPannel: {fileID: 0}
+  multiEndPannel: {fileID: 0}
+  winnerPannel: {fileID: 0}
+  loserPannel: {fileID: 0}
 --- !u!4 &1091968574
 Transform:
   m_ObjectHideFlags: 0
@@ -7408,7 +7412,7 @@ MonoBehaviour:
   m_MinValue: 0.001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.001
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -9457,15 +9461,15 @@ RectTransform:
   m_GameObject: {fileID: 1699924053}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 0.59999996, z: 0}
+  m_LocalScale: {x: 1.4, y: 0.59999996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1081513485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 48}
-  m_SizeDelta: {x: 40, y: 90}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 40, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699924055
 MonoBehaviour:

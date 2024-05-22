@@ -42,7 +42,7 @@ public class GMS : MonoBehaviour
         switch (DM.instance.GetMode())
         {
             case 1:
-                Player1.transform.position = new Vector3(0, 0);
+                Player1.transform.position = new Vector3(0, 1);
                 break;
             case 2:
                 Player2.SetActive(true);
