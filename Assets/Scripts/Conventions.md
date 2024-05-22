@@ -49,3 +49,4 @@ PB.cs = PauseBtn.cs
 AM.cs = AudioManager.cs
 SSUI.cs = SelectSceneUI.cs
 rFE = rendererFallingEffect
+CP.cs = CollisionPlay.cs
