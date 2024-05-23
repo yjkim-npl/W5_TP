@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
-public class CAC : AC
+public class CharacterAnimationController : AnimationController
 {
     private static readonly int isMove = Animator.StringToHash("isMove");
     private static readonly int IsHit = Animator.StringToHash("isHit");

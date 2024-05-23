@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GE : MonoBehaviour
+public class GameExit : MonoBehaviour
 {
     public void GameExitBtn()
     {

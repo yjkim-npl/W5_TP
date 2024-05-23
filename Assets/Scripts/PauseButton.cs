@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PB : MonoBehaviour
+public class PauseButton : MonoBehaviour
 {
     [SerializeField] private GameObject MainMenu;
     [SerializeField] private GameObject SoundMenu;
